@@ -1,5 +1,11 @@
 import setuptools
 
+arr_install_requiers = [
+    "pandas>=0.23.4",
+    "chardet>=2.3.0",
+    "pathlib>1.0.1"
+]
+
 setuptools.setup(
      name='hd-training-exporter',    # This is the name of your PyPI-package.
      version='0.1',                          # Update the version number for new releases
@@ -13,5 +19,6 @@ setuptools.setup(
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
     ],
+    install_requiers = arr_install_requiers, 
     keywords = ['rasa ui', 'rasa','training','export']
 )
