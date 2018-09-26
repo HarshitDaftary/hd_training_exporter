@@ -1,0 +1,21 @@
+from DataGenerator.DataGenerator import DataGenerator
+from pathlib import Path
+from argparse import ArgumentParser
+
+parser = ArgumentParser()
+parser.add_argument("-i", "--input_file", dest="input_file",
+                    help="input file to be read")
+parser.add_argument("-o", "--output_file",dest="output_file",
+                    help="Output file to be written")
+
+args = parser.parse_args()
+# print(args.input_file)
+
+if args.input_file == None:
+    raise("Please provide input file")
+else:
+    objDGenerater = DataGenerator()
+    if args.output_file == None:
+        objDGenerater.readCSVFile(args.input_file)
+    elif args.output_file != None:
+        objDGenerater.readCSVFile(args.input_file,strOutputFile=args.output_file)
